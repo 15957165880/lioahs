@@ -1,0 +1,37 @@
+ /*
+  * Author:liaohs
+  * Date:2016.3.28
+  * Name:boomgame
+  */
+
+
+// dataport.headimg
+var myClassInfo=JSON.parse(localStorage.getItem("myClassInfo"))
+var myBaseInfo=JSON.parse(localStorage.getItem("myBaseInfo"))
+var myAchievement=JSON.parse(localStorage.getItem("myAchievement"))
+
+
+mainApp.controller('color',function($scope, $http) {
+	var topsInfo=[
+		{name:"教学视频",num:10,css:"blue-linear"},
+		{name:"一对一",num:5,css:"green-linear"},
+		{name:"生死局",num:1,css:"purple-linear"}
+	]
+    $scope.circles=topsInfo
+ });
+
+var canvas = document.getElementById("myCanvas");
+if(canvas.getContext){  
+	var ctx = canvas.getContext("2d");  
+	 ctx.beginPath();
+	 ctx.lineWidth = 10; 
+	 ctx.strokeStyle = "blue";
+
+	 var circle = {
+	 	 x : 100,    //圆心的x轴坐标值
+	 	  y : 100,    //圆心的y轴坐标值
+	 	  r : 50      //圆的半径
+	 	  };
+	 	  ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2, true);   
+	 	   ctx.stroke();
+	 	}

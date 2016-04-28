@@ -1,0 +1,17 @@
+ /*
+  * Author:liaohs
+  * Date:2016.3.16
+  * Name:boomgame
+  */
+
+
+
+mainApp.controller('color',["$scope" ,function($scope) {
+
+
+
+}])
+
+
+
+

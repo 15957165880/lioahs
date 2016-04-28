@@ -1,0 +1,50 @@
+ /*
+  * Author:liaohs
+  * Date:2016.3.28
+  * Name:boomgame
+  */
+
+
+// dataport.headimg
+var myClassInfo=JSON.parse(sessionStorage.getItem("myClassInfo"))
+var myBaseInfo=JSON.parse(sessionStorage.getItem("myBaseInfo"))
+var myAchievement=JSON.parse(sessionStorage.getItem("myAchievement"))
+
+
+mainApp.controller('color',["$scope","$http",function($scope, $http) {
+	var topsInfo=[
+		{name:"教学视频",num:10,css:"blue-linear",color:"blue",unit:"个"},
+		{name:"一对一",num:5,css:"green-linear",color:"green",unit:"次"},
+		{name:"生死局",num:1,css:"purple-linear",color:"purple",unit:"次"}
+	]
+    $scope.circles=topsInfo
+
+    var btns=[
+    	{text:"教学视频",css:"",show:false,id:0},
+    	{text:"一对一",css:"",show:false,id:1},
+    	{text:"生死局",css:"",show:false,id:2},
+    ]
+    $scope.btns=angular.copy(btns)
+    $scope.btns[0].css="active"
+    $scope.btns[0].show=true
+
+    $scope.btnFunc=function(a){
+    	console.log(a)
+    	$scope.btns=angular.copy(btns)
+	    $scope.btns[a].css="active"
+	    $scope.btns[a].show=true
+    }
+
+    setTimeout(function(){
+    	$(".lists").removeClass("hidden")
+    },100)
+
+
+
+
+
+
+
+
+ }]);
+
